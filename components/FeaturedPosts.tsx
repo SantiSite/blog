@@ -57,7 +57,7 @@ const FeaturedPosts = () => {
     <div className="mb-8">
       <Carousel infinite customLeftArrow={customLeftArrow} customRightArrow={customRightArrow} responsive={responsive} itemClass="px-4">
         {posts?.length > 0 ? (
-          posts.map((post) => (
+          posts.map((post : { node: any }) => (
             <div className="relative h-72">
               <div
                 className="absolute inline-block h-72 w-full rounded-lg bg-cover bg-center bg-no-repeat shadow-md"

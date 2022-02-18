@@ -41,6 +41,7 @@ const PostWidget = ({ categories, slug }: { categories?: Array<any>, slug?: stri
             <Link
               href={`/post/${post.slug}`}
               key={post.title}
+              // @ts-ignore
               className="text-md"
             >
               {post.title}

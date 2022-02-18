@@ -11,11 +11,14 @@ export default async function comments(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const graphQLClient = new GraphQLClient(graphqlAPI, {
-    headers: {
-      authorization: `Bearer ${token}`,
-    },
-  });
+  let graphQLClient: any = {};
+  if (graphqlAPI != null) {
+    graphQLClient = new GraphQLClient(graphqlAPI, {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    });
+  }
 
   const query = gql`
     mutation CreateComment(

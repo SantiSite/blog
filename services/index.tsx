@@ -31,10 +31,12 @@ export const getPosts = async () => {
     }
   `;
 
-  const result = await request(graphqlAPI, query, null, {
-    authorization: `Bearer ${token}`,
-  });
-  return result.postsConnection.edges;
+  if (graphqlAPI != null) {
+    const result = await request(graphqlAPI, query, null, {
+      authorization: `Bearer ${token}`,
+    });
+    return result.postsConnection.edges;
+  }
 };
 
 export const getRecentPosts = async () => {
@@ -54,10 +56,12 @@ export const getRecentPosts = async () => {
     }
   `;
 
-  const result = await request(graphqlAPI, query, null, {
-    authorization: `Bearer ${token}`,
-  });
-  return result.posts;
+  if (graphqlAPI != null) {
+    const result = await request(graphqlAPI, query, null, {
+      authorization: `Bearer ${token}`,
+    });
+    return result.posts;
+  }
 };
 
 export const getSimilarPosts = async (
@@ -83,15 +87,17 @@ export const getSimilarPosts = async (
     }
   `;
 
-  const result = await request(
-    graphqlAPI,
-    query,
-    { slug, categories },
-    {
-      authorization: `Bearer ${token}`,
-    }
-  );
-  return result.posts;
+  if (graphqlAPI != null) {
+    const result = await request(
+        graphqlAPI,
+        query,
+        {slug, categories},
+        {
+          authorization: `Bearer ${token}`,
+        }
+    );
+    return result.posts;
+  }
 };
 
 export const getCategories = async () => {
@@ -104,10 +110,12 @@ export const getCategories = async () => {
     }
   `;
 
-  const result = await request(graphqlAPI, query, null, {
-    authorization: `Bearer ${token}`,
-  });
-  return result.categories;
+  if (graphqlAPI != null) {
+    const result = await request(graphqlAPI, query, null, {
+      authorization: `Bearer ${token}`,
+    });
+    return result.categories;
+  }
 };
 
 export const getPostDetails = async (slug: string) => {
@@ -139,15 +147,17 @@ export const getPostDetails = async (slug: string) => {
     }
   `;
 
-  const result = await request(
-    graphqlAPI,
-    query,
-    { slug },
-    {
-      authorization: `Bearer ${token}`,
-    }
-  );
-  return result.post;
+  if (graphqlAPI != null) {
+    const result = await request(
+        graphqlAPI,
+        query,
+        {slug},
+        {
+          authorization: `Bearer ${token}`,
+        }
+    );
+    return result.post;
+  }
 };
 
 export const submitComment = async (obj: any) => {
@@ -172,15 +182,17 @@ export const getComments = async (slug: string) => {
     }
   `;
 
-  const result = await request(
-    graphqlAPI,
-    query,
-    { slug },
-    {
-      authorization: `Bearer ${token}`,
-    }
-  );
-  return result.comments;
+  if (graphqlAPI != null) {
+    const result = await request(
+        graphqlAPI,
+        query,
+        {slug},
+        {
+          authorization: `Bearer ${token}`,
+        }
+    );
+    return result.comments;
+  }
 };
 
 export const getCategoryPost = async (slug: string) => {
@@ -215,15 +227,17 @@ export const getCategoryPost = async (slug: string) => {
     }
   `;
 
-  const result = await request(
-    graphqlAPI,
-    query,
-    { slug },
-    {
-      authorization: `Bearer ${token}`,
-    }
-  );
-  return result.postsConnection.edges;
+  if (graphqlAPI != null) {
+    const result = await request(
+        graphqlAPI,
+        query,
+        {slug},
+        {
+          authorization: `Bearer ${token}`,
+        }
+    );
+    return result.postsConnection.edges;
+  }
 };
 
 export const getFeaturedPosts = async () => {
@@ -251,8 +265,10 @@ export const getFeaturedPosts = async () => {
     }
   `;
 
-  const result = await request(graphqlAPI, query, null, {
-    authorization: `Bearer ${token}`,
-  });
-  return result.postsConnection.edges;
+  if (graphqlAPI != null) {
+    const result = await request(graphqlAPI, query, null, {
+      authorization: `Bearer ${token}`,
+    });
+    return result.postsConnection.edges;
+  }
 };

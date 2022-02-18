@@ -28,6 +28,7 @@ const PostDetail = ({ post }: { post: any }) => {
       case 'heading-three':
         return (
           <h3 key={index} className="mb-4 text-xl font-semibold">
+            {/*@ts-ignore*/}
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -36,6 +37,7 @@ const PostDetail = ({ post }: { post: any }) => {
       case 'paragraph':
         return (
           <p key={index} className="mb-8">
+            {/*@ts-ignore*/}
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -44,6 +46,7 @@ const PostDetail = ({ post }: { post: any }) => {
       case 'heading-four':
         return (
           <h4 key={index} className="text-md mb-4 font-semibold">
+            {/*@ts-ignore*/}
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}

@@ -5,10 +5,10 @@ const CommentsForm = ({ slug }: { slug: string }) => {
   const [error, setError] = useState(false);
   const [localStorage, setLocalStorage] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const commentEl = useRef();
-  const nameEl = useRef();
-  const emailEl = useRef();
-  const storeDataEl = useRef();
+  const commentEl: { current: any } = useRef();
+  const nameEl: { current: any }  = useRef();
+  const emailEl: { current: any }  = useRef();
+  const storeDataEl: { current: any }  = useRef();
 
   const handleCommentSubmission = (event: any) => {
     event.preventDefault();
